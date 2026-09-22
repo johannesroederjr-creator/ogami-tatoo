@@ -1,0 +1,27 @@
+# Arbeitsdateien (Originale, nicht für die Live-Seite)
+Bilder/
+cursor-briefing-website.md
+
+# OS / Editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# Unbenutzte Font-Subset-Dateien
+fonts/CormorantGaramond-*
+fonts/JosefinSans-*
+
+# Logo-Duplikate / Quelldateien
+images/logo/visitenkarte.png
+images/logo/Ogami_Logo_*
