@@ -46,9 +46,13 @@
   --bg-alt:     #141414;
   --gold:       #c9a45c;
   --text:       #ece7dd;
-  --text-muted: #b0aaa0;
+  --text-body:  #ddd7cc;
+  --text-muted: #c4bdb2;
   --font-ui:    'Josefin Sans', 'Helvetica Neue', Arial, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --text-sm:    0.875rem;   /* 15–16 px – Labels, Captions */
+  --text-base:  1.0625rem;  /* ~19 px – Fließtext */
+  --text-ui:    0.9375rem;  /* ~17 px – Nav, Filter, FAQ */
   --spacing:    clamp(4rem, 8vw, 7rem);
   --container:  1280px;
   --nav-h:      72px;
@@ -60,12 +64,19 @@ html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-serif);
+  color: var(--text-body);
+  font-family: var(--font-ui);
   font-weight: 400;
-  font-size: clamp(17px, 1.8vw, 18px);
-  line-height: 1.7;
+  font-size: clamp(18px, 1.9vw, 19px);
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Fließtext: Sans-Serif, gut lesbar */
+p {
+  color: var(--text-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
 }
 
 img  { display: block; max-width: 100%; height: auto; }
@@ -77,15 +88,16 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .label-text {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
   white-space: nowrap;
 }
 
 .section-intro {
-  color: var(--text-muted);
+  color: var(--text-body);
+  font-size: var(--text-base);
   max-width: 56ch;
   margin-top: 1.25rem;
 }
@@ -172,8 +184,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .nav-links a {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
   transition: color 0.2s;
@@ -303,10 +315,10 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   max-width: 22ch;
 }
 .hero-lead {
-  font-family: var(--font-serif);
+  font-family: var(--font-ui);
   font-weight: 400;
-  font-size: clamp(1rem, 1.6vw, 1.125rem);
-  color: var(--text-muted);
+  font-size: var(--text-base);
+  color: var(--text-body);
   max-width: 64ch;
   margin-bottom: 2.25rem;
   line-height: 1.75;
@@ -323,8 +335,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .btn-outline {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
   border: 1px solid var(--gold);
@@ -340,8 +352,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .btn-text {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
   transition: color 0.2s;
@@ -366,8 +378,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .filter-btn {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
   padding-bottom: 0.3em;
@@ -421,8 +433,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .gallery-caption {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-top: 0.65rem;
@@ -445,22 +457,24 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 }
 .coverup-image figcaption {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-top: 0.75rem;
 }
 .coverup-text h2 {
   font-family: var(--font-serif);
-  font-weight: 300;
-  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
   line-height: 1.35;
+  color: var(--text);
   margin-bottom: 1rem;
 }
 .coverup-text p {
-  color: var(--text-muted);
+  color: var(--text-body);
+  font-size: var(--text-base);
   margin-bottom: 2rem;
 }
 
@@ -488,6 +502,7 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .about-text p:last-child { margin-bottom: 0; }
 .about-name-note {
   color: var(--text-muted);
+  font-size: var(--text-base);
   font-style: italic;
   margin-top: 2rem;
 }
@@ -503,16 +518,16 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .service-item h3 {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.75rem;
 }
 .service-item p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: var(--text-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
 }
 
 /* ══════════════════════════════════════════
@@ -545,15 +560,15 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .step-body h3 {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
 .step-body p {
-  color: var(--text-muted);
-  font-size: 0.97rem;
+  color: var(--text-body);
+  font-size: var(--text-base);
   max-width: 58ch;
 }
 
@@ -563,19 +578,19 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 }
 .termine-heading {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.68rem;
-  letter-spacing: 0.25em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1rem;
 }
 .termine-list li {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+  font-weight: 400;
+  font-size: var(--text-ui);
+  letter-spacing: 0.06em;
+  color: var(--text-body);
   padding: 0.4em 0;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   display: flex;
@@ -588,17 +603,17 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .hygiene-block { padding-top: 0.5rem; }
 .hygiene-heading {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.68rem;
-  letter-spacing: 0.25em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.75rem;
 }
 .hygiene-block p {
-  color: var(--text-muted);
+  color: var(--text-body);
   max-width: 66ch;
-  font-size: 0.9rem;
+  font-size: var(--text-base);
 }
 
 /* ══════════════════════════════════════════
@@ -617,8 +632,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .faq-question {
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  font-size: var(--text-base);
+  letter-spacing: 0.02em;
   color: var(--text);
   padding: 1.15rem 2rem 1.15rem 0;
   cursor: pointer;
@@ -646,9 +661,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .faq-item[open] .faq-question { color: var(--gold); }
 
 .faq-answer {
-  color: var(--text-muted);
-  font-size: 0.97rem;
-  line-height: 1.7;
+  color: var(--text-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
   padding-bottom: 1.25rem;
   max-width: 60ch;
 }
@@ -663,13 +678,14 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   align-items: start;
 }
 .contact-hint {
-  color: var(--text-muted);
+  color: var(--text-body);
+  font-size: var(--text-base);
   max-width: 42ch;
   margin-bottom: 1rem;
 }
 .contact-response {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: var(--text-ui);
 }
 .contact-channels {
   display: flex;
@@ -682,8 +698,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   gap: 0.75rem;
   font-family: var(--font-ui);
   font-weight: 400;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: var(--text-ui);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
   padding: 0.9rem 0;
@@ -722,9 +738,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .footer-info {
   flex: 1;
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
   color: var(--text-muted);
   line-height: 1.8;
 }
@@ -734,9 +750,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   display: flex;
   gap: 1.5rem;
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -844,7 +860,7 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   .nav-links a {
     display: block;
     padding: 0.9rem clamp(1.25rem, 5vw, 2rem);
-    font-size: 0.85rem;
+    font-size: var(--text-ui);
   }
   .nav-cta { margin: 0.5rem clamp(1.25rem, 5vw, 2rem); }
   .nav-logo-img { width: 160px; }
@@ -891,6 +907,35 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 /* ══════════════════════════════════════════
    COVER-UP SEITE
 ════════════════════════════════════════════ */
+.coverup-hero {
+  padding-top: var(--nav-h);
+  padding-bottom: 0;
+}
+.coverup-hero-inner {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: 0;
+}
+.coverup-hero-label {
+  margin-bottom: 1.5rem;
+}
+.coverup-hero-h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  line-height: 1.25;
+  color: var(--text);
+  max-width: 22ch;
+  margin-bottom: 1.5rem;
+}
+.coverup-hero-lead {
+  color: var(--text-body);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  max-width: 58ch;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
 .coverup-pairs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -901,9 +946,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .coverup-pair img { width: 100%; height: auto; }
 .coverup-caption {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-top: 0.75rem;
@@ -924,9 +969,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 }
 .coverup-fact h3 {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-weight: 400;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1.25rem;
@@ -937,9 +982,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   gap: 0.75rem;
 }
 .coverup-list li {
-  color: var(--text-muted);
-  font-size: 0.97rem;
-  line-height: 1.6;
+  color: var(--text-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
   padding-left: 1.25rem;
   position: relative;
 }
@@ -956,9 +1001,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   gap: 0.85rem;
 }
 .coverup-checklist li {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.6;
+  color: var(--text-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
   padding-left: 1.5rem;
   position: relative;
 }
@@ -978,15 +1023,15 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 }
 .prose-page h1 {
   font-family: var(--font-serif);
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   margin-bottom: 2.5rem;
 }
 .prose-page h2 {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-weight: 400;
+  font-size: var(--text-ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
   margin-top: 2.5rem;
@@ -994,12 +1039,12 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 }
 .prose-page p,
 .prose-page address {
-  color: var(--text-muted);
+  color: var(--text-body);
   font-style: normal;
   max-width: 60ch;
   margin-bottom: 0.85em;
-  font-size: 0.97rem;
-  line-height: 1.7;
+  font-size: var(--text-base);
+  line-height: 1.75;
 }
 .prose-page a { color: var(--gold); }
 
